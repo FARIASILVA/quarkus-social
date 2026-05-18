@@ -1,5 +1,6 @@
 package io.github.dougllasfps.quarkussocial.rest;
 
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -15,7 +16,8 @@ import io.github.dougllasfps.quarkussocial.rest.dto.CreateUserRequest;
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
 
-    @POST    
+    @POST 
+    @Transactional       
     public Response createUser (CreateUserRequest userRequest) {
         User user = new User();
         user.setName(userRequest.getName());
