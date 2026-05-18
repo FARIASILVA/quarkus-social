@@ -7,18 +7,23 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.Produces;
-
-
+import io.github.dougllasfps.quarkussocial.domain.User;
 import io.github.dougllasfps.quarkussocial.rest.dto.CreateUserRequest;
 
 @Path("/users")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    @POST    
     public Response createUser (CreateUserRequest userRequest) {
-        return Response.ok(userRequest).build();
+        User user = new User();
+        user.setName(userRequest.getName());
+        user.setAge(userRequest.getAge());
+        user.persist();
+        
+        
+        return Response.ok(user).build();
     }
 
     @GET
