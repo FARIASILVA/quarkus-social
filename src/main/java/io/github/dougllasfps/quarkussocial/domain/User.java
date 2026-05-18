@@ -1,21 +1,22 @@
 package io.github.dougllasfps.quarkussocial.domain;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-/* import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id; */
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User extends PanacheEntity {
+public class User extends PanacheEntityBase {
 
     
-    /* @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; */
+    private Long id;
     @Column(name = "name")
     private String name;
     private Integer age;
