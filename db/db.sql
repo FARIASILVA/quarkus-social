@@ -1,4 +1,4 @@
-CREATE TABLE qurkus-social;
+CREATE DATABASE quarkus_social;
 
 CREATE TABLE USERS (
 
