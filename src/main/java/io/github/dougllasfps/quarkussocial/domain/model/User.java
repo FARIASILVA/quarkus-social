@@ -1,4 +1,4 @@
-package io.github.dougllasfps.quarkussocial.domain;
+package io.github.dougllasfps.quarkussocial.domain.model;
 
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User extends PanacheEntityBase {
+public class User {
 
     
     @Id
